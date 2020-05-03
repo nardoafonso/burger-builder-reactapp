@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './Modal.css';
-import Aux from '../../../hoc/Auxiliary';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Backdrop from '../Backdrop/Backdrop';
+
+const memoDependencyFunction = (prevProps,nextProps) => (nextProps.show === prevProps.show);
 
 const modal = (props)=>(
    <Aux>
@@ -16,4 +18,4 @@ const modal = (props)=>(
    </Aux>
 );
 
-export default modal;
+export default React.memo(modal,memoDependencyFunction);
