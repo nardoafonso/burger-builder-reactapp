@@ -3,7 +3,9 @@ import classes from './Modal.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Backdrop from '../Backdrop/Backdrop';
 
-const memoDependencyFunction = (prevProps,nextProps) => (nextProps.show === prevProps.show);
+const memoDependencyFunction = (prevProps,nextProps) => {
+    return nextProps.show === prevProps.show && nextProps.children === prevProps.children;
+};
 
 const modal = (props)=>(
    <Aux>
